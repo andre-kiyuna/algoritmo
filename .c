@@ -45,3 +45,32 @@ float calcularMedia(float agua[13], float media){
     printf ("A media e: %f\n", agua[0]);
     return agua, media;
 }
+
+struct clientes cadastrarCliente() {
+    struct clientes novoCliente;
+    double codigo
+    for (int i=0; i<3;i++)
+    printf("Digite o nome completo: ");
+    scanf(" %49[^\n]", novoCliente.nome);
+
+    printf("Digite o CPF: ");
+    scanf("%lf", &novoCliente.cpf);
+
+    printf("Digite o sexo: ");
+    scanf(" %c", &novoCliente.sexo);
+
+    printf("Digite o telefone fixo: ");
+    scanf(" %14[^\n]", novoCliente.tel.fixo);
+
+    printf("Digite o telefone movel: ");
+    scanf(" %15[^\n]", novoCliente.tel.movel);
+
+    novoCliente.codigo = (int)(novoCliente.cpf / 100000.0);
+    printf("Nome: %s\n", novoCliente.nome);
+    printf("CPF: %lf\n", novoCliente.cpf);
+    printf("Sexo: %c\n", novoCliente.sexo);
+    printf("Telefone fixo: %s\n", novoCliente.tel.fixo);
+    printf("Telefone movel: %s\n", novoCliente.tel.movel);
+    printf("Codigo: %d\n", novoCliente.codigo);
+    return novoCliente;
+}
