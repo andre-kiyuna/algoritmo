@@ -74,3 +74,78 @@ struct clientes cadastrarCliente() {
     printf("Codigo: %d\n", novoCliente.codigo);
     return novoCliente;
 }
+#include <stdio.h>
+
+struct telefones{
+    char fixo[15];
+    char movel[16];
+};
+
+struct clientes{
+    int codigo;
+    char nome[50];
+    double cpf;
+    char sexo;
+    struct telefones tel;
+};
+
+int geraCodigoCliente(double cpf);
+
+struct clientes cadastrarCliente();
+
+void listarClientes(struct clientes cliente[]);
+
+int geraCodigoCliente(double cpf){
+    int codigo = (int)(cpf / 100000.0);
+    return codigo;
+}
+
+struct clientes cadastrarCliente() {
+    struct clientes cliente[3];
+    int i = 0;
+    do{
+    printf("Digite o nome completo: ");
+    scanf(" %49[^\n]", cliente[i].nome);
+
+    printf("Digite o CPF: ");
+    scanf("%lf", &cliente[i].cpf);
+
+    printf("Digite o sexo: ");
+    scanf(" %c", &cliente[i].sexo);
+
+    printf("Digite o telefone fixo: ");
+    scanf(" %14[^\n]", cliente[i].tel.fixo);
+
+    printf("Digite o telefone movel: ");
+    scanf(" %15[^\n]", cliente[i].tel.movel);
+
+    cliente[i].codigo = geraCodigoCliente(cliente[i].cpf);
+    
+    printf("Nome: %s\n", cliente[i].nome);
+    printf("CPF: %.0lf\n", cliente[i].cpf);
+    printf("Sexo: %c\n", cliente[i].sexo);
+    printf("Telefone fixo: %s\n", cliente[i].tel.fixo);
+    printf("Telefone movel: %s\n", cliente[i].tel.movel);
+    printf("Codigo: %d\n", cliente[i].codigo);
+    i++;
+    } while (i < 3);
+    return novoCliente;
+}
+
+void listarClientes(struct clientes cliente[]){
+    for (int i=0; int<3; int++){
+    printf("Nome: %s\n", cliente[i].nome);
+    printf("CPF: %.0lf\n", cliente[i].cpf);
+    printf("Sexo: %c\n", cliente[i].sexo);
+    printf("Telefone fixo: %s\n", cliente[i].tel.fixo);
+    printf("Telefone movel: %s\n", cliente[i].tel.movel);
+    printf("Codigo: %d\n", cliente[i].codigo);
+    }
+};
+int main()
+{
+    struct clientes cadastrarCliente();
+    void listarClientes(struct clientes cliente[]);
+    return 0;
+}
+
